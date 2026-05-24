@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\SuspensionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/dashboard', function () {
@@ -17,4 +18,19 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+
+Route::middleware(['auth'])
+    ->prefix('admin')
+    ->name('admin.')
+    ->group(function () {
+
+
+        Route::resource('suspensions', SuspensionController::class);
+    });
+
+
+
+
+
+
+require __DIR__ . '/auth.php';
