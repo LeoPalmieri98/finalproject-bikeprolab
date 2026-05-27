@@ -22,7 +22,7 @@ class SuspensionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.suspensions.create');
     }
 
     /**
@@ -30,15 +30,41 @@ class SuspensionController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $data = $request->all();
 
+        $newSuspension = new Suspension();
+
+        $newSuspension->category_id = $data["category_id"];
+        $newSuspension->brand = $data["brand"];
+        $newSuspension->name = $data["name"];
+        $newSuspension->price = $data["price"];
+        $newSuspension->size = $data["size"];
+        $newSuspension->wheel = $data["wheel"];
+        $newSuspension->material = $data["material"];
+        $newSuspension->color = $data["color"];
+        $newSuspension->brakes = $data["brakes"];
+        $newSuspension->description = $data["description"];
+
+
+        if ($request->hasFile('image')) {
+
+            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
+
+            $request->file('image')->storeAs('uploads', $fileName, 'public');
+
+            $newSuspension->image = $fileName;
+        }
+
+        $newSuspension->save();
+
+        return redirect()->route('admin.suspensions.index');
+    }
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Suspension $suspension)
     {
-        //
+        return view('admin.suspensions.show', compact('suspension'));
     }
 
     /**

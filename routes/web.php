@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\RevisionController;
 use App\Http\Controllers\Admin\SuspensionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+})->name("home");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -26,6 +27,7 @@ Route::middleware(['auth'])
 
 
         Route::resource('suspensions', SuspensionController::class);
+        Route::resource('revisions', RevisionController::class);
     });
 
 
