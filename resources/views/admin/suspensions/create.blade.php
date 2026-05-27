@@ -6,7 +6,7 @@
 <div class="card shadow border-0 mt-4">
     <div class="card-body p-4 p-md-5">
         
-        <form action="{{ route('admin.suspensions.store') }}" method="POST">
+        <form action="{{ route('admin.suspensions.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             
             <div class="row">
@@ -53,7 +53,15 @@
                     <label class="form-label fw-bold text-secondary">Colore</label>
                     <input type="text" name="color" class="form-control" placeholder="Nero, Kashima...">
                 </div>
+                
+                <div class="col-md-3 mb-3">
+                    <label class="form-label fw-bold text-secondary">Freni</label>
+                    <input type="text" name="brakes" class="form-control" placeholder="Es: Disco 203mm">
+                </div>
+
             </div>
+
+       
 
             <div class="mb-4 mt-3">
                 <label class="form-label fw-bold">Immagine Prodotto</label>

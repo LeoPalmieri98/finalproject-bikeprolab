@@ -45,10 +45,6 @@
                                     <span class="fa-solid fa-eye"></span> Vedi
                                 </a>
 
-                                <a href="{{ route('admin.suspensions.edit', $suspension) }}" class="btn btn-outline-warning btn-sm">
-                                    <span class="fa-solid fa-pen"></span>
-                                </a>
-
                                 <form action="{{ route('admin.suspensions.destroy', $suspension) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $suspension->name }} in modo permanente?');">
                                     @csrf
                                     @method('DELETE')

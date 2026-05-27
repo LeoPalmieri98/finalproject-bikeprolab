@@ -33,10 +33,7 @@
                     <a href="{{ route('admin.suspensions.index') }}" class="btn btn-outline-secondary px-4 py-2 fw-bold text-uppercase">
                         <span class="fa-solid fa-arrow-left me-2"></span> Torna allo Shop
                     </a>
-                    
-                    <a href="{{ route('admin.suspensions.edit', $suspension) }}" class="btn btn-warning px-4 py-2 fw-bold text-uppercase">
-                        <span class="fa-solid fa-pen me-2"></span> Modifica
-                    </a>
+
                 </div>
             </div>
 

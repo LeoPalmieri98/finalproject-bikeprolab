@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SuspensionController extends Controller
 {
@@ -46,13 +47,11 @@ class SuspensionController extends Controller
         $newSuspension->description = $data["description"];
 
 
-        if ($request->hasFile('image')) {
+        if (array_key_exists("image", $data)) {
 
-            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $img_url = Storage::putFile("uploads", $data["image"]);
 
-            $request->file('image')->storeAs('uploads', $fileName, 'public');
-
-            $newSuspension->image = $fileName;
+            $newSuspension->image = $img_url;
         }
 
         $newSuspension->save();
@@ -86,8 +85,11 @@ class SuspensionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Suspension $suspension)
     {
-        //
+
+        $suspension->delete();
+
+        return redirect()->route('admin.suspensions.index');
     }
 }
