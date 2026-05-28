@@ -28,7 +28,7 @@
                 @foreach ($suspensions as $suspension)
                     <tr>
                         <td>
-                            <img src="{{ asset('storage/uploads/' . $suspension->image) }}" alt="{{ $suspension->name }}" style="width: 60px; height: 60px; object-fit: cover;" class="rounded border shadow-sm">
+                            <img src="{{ asset('storage/' . $suspension->image) }}" alt="{{ $suspension->name }}" style="width: 60px; height: 60px; object-fit: cover;" class="rounded border shadow-sm">
                         </td>
                         
                         <td class="fw-bold">{{ $suspension->brand }}</td>

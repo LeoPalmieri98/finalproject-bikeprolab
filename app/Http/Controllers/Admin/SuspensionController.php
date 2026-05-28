@@ -49,8 +49,8 @@ class SuspensionController extends Controller
 
         if (array_key_exists("image", $data)) {
 
-            $img_url = Storage::putFile("uploads", $data["image"]);
-
+            // $img_url = Storage::putFile("uploads", $data["image"]);
+            $img_url = Storage::disk('public')->putFile("uploads", $data["image"]);
             $newSuspension->image = $img_url;
         }
 

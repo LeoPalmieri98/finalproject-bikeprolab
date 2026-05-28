@@ -26,7 +26,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Kashima (Oro/Arancione)',
                 'brakes' => 'Disco (Post Mount)',
                 'description' => 'Forcella top di gamma Fox 38 Float Factory con cartuccia Grip2, regolazioni HSC/LSC e HSR/LSR. Ideale per Enduro.',
-                'image' => 'fox38-float.webp',
+                'image' => 'uploads/fox38-float.webp',
             ],
             // 2. Forcella Lyrik Select
             [
@@ -40,7 +40,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Nero',
                 'brakes' => 'Disco (Post Mount)',
                 'description' => 'Forcella ammortizzata RockShox Lyrik Select dotata di cartuccia idraulica Charger RC D1. Ottimo rapporto qualità-prezzo.',
-                'image' => 'LyrikSelectCharger.webp',
+                'image' => 'uploads/LyrikSelectCharger.webp',
             ],
             // 3. Forcella Lyrik Ultimate
             [
@@ -54,7 +54,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Nero lucido',
                 'brakes' => 'Disco (Post Mount)',
                 'description' => 'La forcella definitiva per il trail/all-mountain. Perno Boost 15x110, off-set 44mm e la precisissima cartuccia Charger 3.1 RC2.',
-                'image' => 'LyrikUltimateharger.webp',
+                'image' => 'uploads/LyrikUltimateharger.webp',
             ],
             // 4. Ammortizzatore Öhlins a molla
             [
@@ -68,7 +68,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Giallo Öhlins / Nero',
                 'brakes' => 'N/D',
                 'description' => 'Ammortizzatore a molla Öhlins TTX22M.2 specifico per e-bike. Attacco Trunnion Side-by-Side per la massima sensibilità e tenuta in discesa.',
-                'image' => 'ebikeTTX22M.webp',
+                'image' => 'uploads/ebikeTTX22M.webp',
             ],
             // 5. Ammortizzatore Fox Float X2
             [
@@ -82,7 +82,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Kashima / Nero',
                 'brakes' => 'N/D',
                 'description' => 'Ammortizzatore ad aria Fox Float X2 Factory. Misura metrica 210x50 con regolazione a 2 posizioni, perfetto per le discese più tecniche.',
-                'image' => 'FloatX2.webp',
+                'image' => 'uploads/FloatX2.webp',
             ],
             // 6. Ammortizzatore RockShox Deluxe Nude
             [
@@ -96,7 +96,7 @@ class SuspensionTableSeeder extends Seeder
                 'color' => 'Nero',
                 'brakes' => 'N/D',
                 'description' => 'Ammortizzatore RockShox Deluxe Nude RLC3, leggero e affidabile, ideale per chi cerca prestazioni fluide con un sistema ad aria.',
-                'image' => 'DeluxeNude.webp',
+                'image' => 'uploads/DeluxeNude.webp',
             ]
         ];
 
