@@ -116,6 +116,9 @@ class SuspensionController extends Controller
     public function destroy(Suspension $suspension)
     {
 
+        if ($suspension->image) {
+            Storage::delete($suspension->image);
+        }
         $suspension->delete();
 
         return redirect()->route('admin.suspensions.index');
