@@ -3,8 +3,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container">
         
-        <a class="navbar-brand fw-bold goodTimes" href="{{  route('home') }}">
-            BikeProLab
+        <a class="navbar-brand" href="{{ route('home') }}">
+            <img src="{{ asset('storage/img/logo.png') }}" alt="BikeProLab" style="height: 15px;">
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

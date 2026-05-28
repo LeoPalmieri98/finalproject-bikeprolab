@@ -19,13 +19,13 @@
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3" style="font-size: 0.9rem;">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contatti</h5>
                 <p class="fa-solid fa-location-dot me-2 text-white-50">
-                     Via dell'Officina, 42 - Italia
+                     Via dell'Officina, 42 - Nova Siri 
                 </p>
                 <p class="fa-solid fa-envelope me-2 text-white-50">
-                     info@bikeprolab.it
+                     simoxb83@gmail.com
                 </p>
                 <p class="fa-solid fa-phone me-2 text-white-50">
-                     +39 0123 456789
+                     +39 Coming Soon...
                 </p>
             </div>
 
