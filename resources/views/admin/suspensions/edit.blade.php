@@ -1,33 +1,34 @@
 @extends('layouts.layoutbase')
 
-@section('title', 'Nuova Sospensione')
+@section('title', 'Modifica Sospensione')
 
 @section('content')
 <div class="card shadow border-0 mt-4">
     <div class="card-body p-4 p-md-5">
         
-        <form action="{{ route('admin.suspensions.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.suspensions.update', $suspension) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
             
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Brand</label>
-                    <input type="text" name="brand" class="form-control" placeholder="Es: Fox, RockShox...">
+                    <input type="text" name="brand" class="form-control" value="{{ $suspension->brand}}">
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Nome Modello</label>
-                    <input type="text" name="name" class="form-control" placeholder="Es: 38 Factory Grip2">
+                    <input type="text" name="name" class="form-control" value="{{$suspension->name}}" >
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Prezzo (€)</label>
-                    <input type="number" step="0.01" name="price" class="form-control" placeholder="850.00">
+                    <input type="number" step="0.01" name="price" class="form-control" value="{{$suspension->price}}">
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Categoria (ID)</label>
-                    <input type="number" name="category_id" class="form-control" placeholder="1 = Forcella, 2 = Ammo">
+                    <input type="number" name="category_id" class="form-control" value="{{$suspension->category_id}}">
                 </div>
             </div>
 
@@ -36,27 +37,27 @@
             <div class="row">
                 <div class="col-md-3 mb-3">
                     <label class="form-label fw-bold text-secondary">Misura</label>
-                    <input type="text" name="size" class="form-control" placeholder="Es: 29 pollici / 210x55">
+                    <input type="text" name="size" class="form-control" value="{{$suspension->size}}">
                 </div>
                 
                 <div class="col-md-3 mb-3">
                     <label class="form-label fw-bold text-secondary">Ruota</label>
-                    <input type="text" name="wheel" class="form-control" placeholder="Es: 29, 27.5...">
+                    <input type="text" name="wheel" class="form-control" value="{{$suspension->wheel}}">
                 </div>
 
                 <div class="col-md-3 mb-3">
                     <label class="form-label fw-bold text-secondary">Materiale</label>
-                    <input type="text" name="material" class="form-control" placeholder="Alluminio, Carbonio...">
+                    <input type="text" name="material" class="form-control" value="{{$suspension->material}}">
                 </div>
 
                 <div class="col-md-3 mb-3">
                     <label class="form-label fw-bold text-secondary">Colore</label>
-                    <input type="text" name="color" class="form-control" placeholder="Nero, Kashima...">
+                    <input type="text" name="color" class="form-control" value="{{$suspension->color}}">
                 </div>
                 
                 <div class="col-md-3 mb-3">
                     <label class="form-label fw-bold text-secondary">Freni</label>
-                    <input type="text" name="brakes" class="form-control" placeholder="Es: Disco 203mm">
+                    <input type="text" name="brakes" class="form-control" value="{{$suspension->brakes}}">
                 </div>
 
             </div>
@@ -65,12 +66,13 @@
 
             <div class="mb-4 mt-3">
                 <label class="form-label fw-bold">Immagine Prodotto</label>
-                <input type="file" name="image" class="form-control">
+                <p>Se vuoi cambiare l'immagine, carica un nuovo file.</p>
+                <input type="file" name="image" class="form-control" value="{{$suspension->image}}">
             </div>
 
             <div class="mb-4">
                 <label class="form-label fw-bold">Descrizione</label>
-                <textarea name="description" class="form-control" rows="4" placeholder="Dettagli tecnici..."></textarea>
+                <textarea name="description" class="form-control" rows="4" >{{$suspension->description}}</textarea>
             </div>
 
             <div class="d-flex justify-content-end gap-3 mt-4">

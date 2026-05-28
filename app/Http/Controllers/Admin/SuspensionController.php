@@ -39,12 +39,12 @@ class SuspensionController extends Controller
         $newSuspension->brand = $data["brand"];
         $newSuspension->name = $data["name"];
         $newSuspension->price = $data["price"];
-        $newSuspension->size = $data["size"];
-        $newSuspension->wheel = $data["wheel"];
-        $newSuspension->material = $data["material"];
-        $newSuspension->color = $data["color"];
-        $newSuspension->brakes = $data["brakes"];
-        $newSuspension->description = $data["description"];
+        $newSuspension->size = $data["size"] ?? "N/D";
+        $newSuspension->wheel = $data["wheel"] ?? "N/D";
+        $newSuspension->material = $data["material"] ?? "N/D";
+        $newSuspension->color = $data["color"] ?? "N/D";
+        $newSuspension->brakes = $data["brakes"] ?? "N/D";
+        $newSuspension->description = $data["description"] ?? "Nessuna Descrizione";
 
 
         if (array_key_exists("image", $data)) {
@@ -69,17 +69,45 @@ class SuspensionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Suspension $suspension)
     {
-        //
+        return view('admin.suspensions.edit', compact('suspension'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Suspension $suspension)
     {
-        //
+
+        $data = $request->all();
+
+        $suspension->category_id = $data["category_id"];
+        $suspension->brand = $data["brand"];
+        $suspension->name = $data["name"];
+        $suspension->price = $data["price"];
+        $suspension->size = $data["size"] ?? "N/D";
+        $suspension->wheel = $data["wheel"] ?? "N/D";
+        $suspension->material = $data["material"] ?? "N/D";
+        $suspension->color = $data["color"] ?? "N/D";
+        $suspension->brakes = $data["brakes"] ?? "N/D";
+        $suspension->description = $data["description"] ?? "Nessuna Descrizione";
+
+
+        if (array_key_exists("image", $data)) {
+
+            Storage::delete($suspension->image);
+
+            //$img_url = Storage::putFile("uploads", $data["image"]);
+
+            $img_url = Storage::disk('public')->putFile("uploads", $data["image"]);
+
+            $suspension->image = $img_url;
+        }
+
+        $suspension->update();
+
+        return redirect()->route('admin.suspensions.show', $suspension);
     }
 
     /**

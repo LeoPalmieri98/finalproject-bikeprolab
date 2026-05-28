@@ -6,11 +6,11 @@
 <div class="card shadow-sm border-0 mt-4">
     <div class="card-body p-4 p-md-5">
         <div class="row align-items-center">
-            
+            @if ($suspension->image)
             <div class="col-md-5 text-center mb-4 mb-md-0">
-                <img src="{{ asset('storage/uploads/' . $suspension->image) }}" alt="{{ $suspension->name }}" class="img-fluid rounded border shadow" style="max-height: 450px; object-fit: contain;">
+                <img src="{{ asset('storage/' . $suspension->image) }}" alt="{{ $suspension->name }}" class="img-fluid rounded border shadow" style="max-height: 450px; object-fit: contain;">
             </div>
-
+            @endif
             <div class="col-md-7">
                 <h2 class="fw-bold mb-2">{{ $suspension->name }}</h2>
                 <h3 class="text-danger fw-bold mb-4">€ {{$suspension->price }}</h3>
@@ -33,7 +33,10 @@
                     <a href="{{ route('admin.suspensions.index') }}" class="btn btn-outline-secondary px-4 py-2 fw-bold text-uppercase">
                         <span class="fa-solid fa-arrow-left me-2"></span> Torna allo Shop
                     </a>
-
+                    
+                    <a href="{{ route('admin.suspensions.edit', $suspension) }}" class="btn btn-warning px-4 py-2 fw-bold text-uppercase">
+                        <span class="fa-solid fa-pen me-2"></span> Modifica
+                    </a>
                 </div>
             </div>
 
