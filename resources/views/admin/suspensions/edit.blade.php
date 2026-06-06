@@ -28,7 +28,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Categoria (ID)</label>
-                    <input type="number" name="category_id" class="form-control" value="{{$suspension->category_id}}">
+                    <input type="number" name="category_id" class="form-control" value="{{$suspension->category_id}}" min="1" max="2">
                 </div>
             </div>
 

@@ -1,5 +1,3 @@
-
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
     <div class="container">
         
@@ -25,16 +23,24 @@
                 </li>
             </ul>
 
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-danger btn-sm mt-1 text-uppercase">
-                            Esci
-                        </button>
-                    </form>
-                </li>
-            </ul> 
+<ul class="navbar-nav d-flex flex-row align-items-center">
+    
+    <li class="nav-item me-2">
+        <a href="{{ route('dashboard') }}" class="btn btn-outline-light btn-sm text-uppercase">
+            <i class="fas fa-user"></i> 
+        </a>
+    </li>
+
+    <li class="nav-item">
+        <form method="POST" action="{{ route('logout') }}" class="m-0 p-0">
+            @csrf
+            <button type="submit" class="btn btn-outline-danger btn-sm text-uppercase m-0">
+                Esci
+            </button>
+        </form>
+    </li>
+    
+</ul>
             
         </div>
     </div>

@@ -18,4 +18,14 @@ class suspensionController extends Controller
             "data" => $suspensions,
         ]);
     }
+
+    public function show(Suspension $suspension)
+    {
+        $suspension->load("category");
+
+        return response()->json([
+            "success" => true,
+            "data" => $suspension
+        ]);
+    }
 }

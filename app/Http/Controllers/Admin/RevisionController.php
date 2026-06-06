@@ -36,25 +36,31 @@ class RevisionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Revision $revision)
     {
-        //
+        return view('admin.revisions.show', compact('revision'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Revision $revision)
     {
-        //
+        return view('admin.revisions.edit', compact('revision'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Revision $revision)
     {
-        //
+        $request->validate([
+            'status' => 'required|in:Accettata,Presa in carico,Completata',
+        ]);
+
+        $revision->update(['status' => $request->status]);
+
+        return redirect()->route('admin.revisions.index');
     }
 
     /**

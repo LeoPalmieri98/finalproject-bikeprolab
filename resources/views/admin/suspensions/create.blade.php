@@ -27,7 +27,7 @@
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Categoria (ID)</label>
-                    <input type="number" name="category_id" class="form-control" placeholder="1 = Forcella, 2 = Ammo">
+                    <input type="number" name="category_id" class="form-control" placeholder="1 = Forcella, 2 = Ammo" min="1" max="2">
                 </div>
             </div>
 

@@ -9,12 +9,7 @@
                 </p>
             </div>
 
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                <h5 class="text-uppercase mb-4 font-weight-bold text-white ">Link Utili</h5>
-                <p>
-                    <a href="#" class="text-white text-decoration-none text-white-50 ">Chi Siamo</a>
-                </p>
-            </div>
+
 
             <div class="col-md-3 col-lg-2 col-xl-3 mx-auto mt-3" style="font-size: 0.9rem;">
                 <h5 class="text-uppercase mb-4 font-weight-bold text-white">Contatti</h5>
@@ -48,7 +43,7 @@
 
         <div class="row align-items-center">
             <div class="col-md-7 col-lg-8">
-                <p class="text-white-50" style="font-size: 0.85rem;">
+                <p class="text-white-50 ms-2" style="font-size: 0.85rem;">
                     © 2026 Copyright:
                     <strong class="text-white">BikeProLab</strong> - Tutti i diritti riservati.
                 </p>

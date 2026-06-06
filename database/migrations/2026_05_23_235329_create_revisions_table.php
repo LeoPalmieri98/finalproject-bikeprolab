@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("brand");
             $table->string("model");
             $table->string("serial_key");
-            $table->string("serial_number");
+            $table->string("tel_number");
             $table->enum("service_interval", ["50", "100", "200", "altro"]);
             $table->enum('status', ['Accettata', 'Presa in carico', 'Completata'])->default('Accettata');
             $table->timestamps();
