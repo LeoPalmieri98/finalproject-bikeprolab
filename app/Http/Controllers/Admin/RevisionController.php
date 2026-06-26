@@ -55,7 +55,7 @@ class RevisionController extends Controller
     public function update(Request $request, Revision $revision)
     {
         $request->validate([
-            'status' => 'required|in:Accettata,Presa in carico,Completata',
+            'status' => 'required|in:Inviata,Accettata,Rifiutata,Presa in carico,In Lavorazione,Completata',
         ]);
 
         $revision->update(['status' => $request->status]);

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
 
-class suspensionController extends Controller
+class SuspensionController extends Controller
 {
 
     public function index()

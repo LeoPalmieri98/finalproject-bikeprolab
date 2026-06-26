@@ -27,8 +27,15 @@
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label class="form-label fw-bold">Categoria (ID)</label>
-                    <input type="number" name="category_id" class="form-control" value="{{$suspension->category_id}}" min="1" max="2">
+                    <label for="category_id" class="form-label fw-bold">Categoria</label>
+                    <select name="category_id" id="category_id" class="form-control" required>
+                        <option value="">-- Seleziona una Categoria --</option>
+                        
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                        
+                    </select>
                 </div>
             </div>
 

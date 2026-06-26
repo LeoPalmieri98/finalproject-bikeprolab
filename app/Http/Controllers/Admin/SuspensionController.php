@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Suspension;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,7 @@ class SuspensionController extends Controller
     public function index()
     {
         $suspensions = Suspension::all();
+        //dd($suspensions);
         return view('admin.suspensions.index', compact('suspensions'));
     }
 
@@ -23,7 +25,8 @@ class SuspensionController extends Controller
      */
     public function create()
     {
-        return view('admin.suspensions.create');
+        $categories = Category::all();
+        return view('admin.suspensions.create', compact("categories"));
     }
 
     /**
@@ -71,7 +74,8 @@ class SuspensionController extends Controller
      */
     public function edit(Suspension $suspension)
     {
-        return view('admin.suspensions.edit', compact('suspension'));
+        $categories = Category::all();
+        return view('admin.suspensions.edit', compact('suspension', 'categories'));
     }
 
     /**
@@ -95,13 +99,11 @@ class SuspensionController extends Controller
 
 
         if (array_key_exists("image", $data)) {
-
-            Storage::delete($suspension->image);
-
+            if ($suspension->image) {
+                Storage::disk("public")->delete($suspension->image);
+            }
             //$img_url = Storage::putFile("uploads", $data["image"]);
-
             $img_url = Storage::disk('public')->putFile("uploads", $data["image"]);
-
             $suspension->image = $img_url;
         }
 

@@ -13,13 +13,13 @@
             
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{ route('home') }}">Home</a>
+                    <a class="nav-link text-uppercase fw-bold" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{ route('admin.suspensions.index') }}">Shop</a>
+                    <a class="nav-link text-uppercase fw-bold" href="{{ route('admin.suspensions.index') }}">Shop</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase" href="{{ route('admin.revisions.index') }}">Revisione Sospensioni</a>
+                    <a class="nav-link text-uppercase fw-bold" href="{{ route('admin.revisions.index') }}">Revisione Sospensioni</a>
                 </li>
             </ul>
 
@@ -34,7 +34,7 @@
     <li class="nav-item">
         <form method="POST" action="{{ route('logout') }}" class="m-0 p-0">
             @csrf
-            <button type="submit" class="btn btn-outline-danger btn-sm text-uppercase m-0">
+            <button type="submit" class="btn btn-outline-danger btn-sm text-uppercase m-0 fw-bold">
                 Esci
             </button>
         </form>

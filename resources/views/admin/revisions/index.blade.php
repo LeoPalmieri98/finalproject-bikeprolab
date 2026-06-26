@@ -32,11 +32,17 @@
                             <td>{{ $revision->brand }} {{ $revision->model }}</td>
                             <td>{{ $revision->service_interval }} ore</td>
                             <td>
-                                @if($revision->status == 'Accettata')
-                                    <span class="badge bg-warning text-dark">Accettata</span>
-                                @elseif($revision->status == 'Presa in carico')
-                                    <span class="badge bg-primary">Presa in carico</span>
-                                @else
+                                @if($revision->status == 'Inviata')
+                                    <span class="badge bg-warning text-dark">Inviata</span>
+                                @elseif($revision->status == 'Accettata')
+                                    <span class="badge bg-info">Accettata</span>
+                                @elseif($revision->status == 'Rifiutata')
+                                    <span class="badge bg-danger">Rifiutata</span>
+                                     @elseif($revision->status == 'Presa in carico')
+                                    <span class="badge bg-black">Presa in carico</span>
+                                     @elseif($revision->status == 'In Lavorazione')
+                                    <span class="badge bg-primary">In Lavorazione</span>
+                                     @elseif($revision->status == 'Completata')
                                     <span class="badge bg-success">Completata</span>
                                 @endif
                             </td>

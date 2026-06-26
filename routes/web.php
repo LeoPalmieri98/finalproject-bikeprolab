@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\RevisionController;
 use App\Http\Controllers\Admin\SuspensionController;
 use App\Http\Controllers\ProfileController;
@@ -24,8 +25,7 @@ Route::middleware(['auth'])
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
-
-
+        Route::resource('categories', CategoryController::class);
         Route::resource('suspensions', SuspensionController::class);
         Route::resource('revisions', RevisionController::class);
     });

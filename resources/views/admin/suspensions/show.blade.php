@@ -16,7 +16,7 @@
                 <h3 class="text-danger fw-bold mb-4">€ {{$suspension->price }}</h3>
 
                 <ul class="list-group list-group-flush mb-4 border-top border-bottom">
-                    <li class="list-group-item bg-transparent px-0"><strong>Categoria ID:</strong> {{ $suspension->category_id }}</li>
+                    <li class="list-group-item bg-transparent px-0"><strong>Categoria ID:</strong> {{ $suspension->category->name }}</li>
                     <li class="list-group-item bg-transparent px-0"><strong>Misura:</strong> {{ $suspension->size }}</li>
                     <li class="list-group-item bg-transparent px-0"><strong>Dimensione Ruota:</strong> {{ $suspension->wheel ?? 'N/D' }}</li>
                     <li class="list-group-item bg-transparent px-0"><strong>Materiale:</strong> {{ $suspension->material }}</li>

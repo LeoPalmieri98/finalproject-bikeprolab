@@ -1,13 +1,20 @@
 @extends('layouts.layoutbase')
-@section('content')
  @section('title' , "Gestione Shop")
+ @section('content')
+
 <div class="d-flex justify-content-between align-items-center mb-4">
    
     <h2 class="fw-bold">Elenco Prodotti:</h2>
     
-    <a href="{{ route('admin.suspensions.create') }}" class="btn btn-success shadow-sm">
-        <span class="fa-solid fa-plus"></span> Nuova Sospensione
-    </a>
+<div class="d-flex gap-2">
+        <a href="{{ route('admin.categories.index') }}" class="btn ">
+            <span class="fa-solid fa-tags"></span> Gestisci Categorie
+        </a>
+
+        <a href="{{ route('admin.suspensions.create') }}" class="btn btn-success shadow-sm">
+            <span class="fa-solid fa-plus"></span> Nuova Sospensione
+        </a>
+    </div>
 </div>
 
 
@@ -34,7 +41,7 @@
                         <td class="fw-bold">{{ $suspension->brand }}</td>
                         <td>{{ $suspension->name }}</td>
                         <td>
-                            <span class="badge bg-secondary">{{ $suspension->category->name }}</span>
+                            <span class="badge bg-secondary ">{{ $suspension->category->name }}</span>
                         </td>
                         <td class="text-success fw-bold">€ {{ $suspension->price }}</td>
                         

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("serial_key");
             $table->string("tel_number");
             $table->enum("service_interval", ["50", "100", "200", "altro"]);
-            $table->enum('status', ['Accettata', 'Presa in carico', 'Completata'])->default('Accettata');
+            $table->enum('status', ['Inviata', 'Accettata', 'Rifiutata', 'Presa in carico', 'In Lavorazione', 'Completata'])->default('Inviata');
             $table->timestamps();
         });
     }

@@ -38,11 +38,14 @@
                         @csrf
                         @method('PUT')
 
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <label for="status" class="form-label fw-bold">Stato Attuale</label>
                             <select name="status" id="status" class="form-select form-select-lg">
+                                <option value="Inviata" {{ $revision->status == 'Inviata' ? 'selected' : '' }}>Inviata</option>  
                                 <option value="Accettata" {{ $revision->status == 'Accettata' ? 'selected' : '' }}>Accettata</option>
+                                <option value="Rifiutata" {{ $revision->status == 'Rifiutata' ? 'selected' : '' }}>Rifiutata</option>
                                 <option value="Presa in carico" {{ $revision->status == 'Presa in carico' ? 'selected' : '' }}>Presa in carico</option>
+                                <option value="In Lavorazione" {{ $revision->status == 'In Lavorazione' ? 'selected' : '' }}>In Lavorazione</option>
                                 <option value="Completata" {{ $revision->status == 'Completata' ? 'selected' : '' }}>Completata</option>
                             </select>
                         </div>

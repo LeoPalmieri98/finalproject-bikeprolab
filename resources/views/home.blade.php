@@ -1,5 +1,5 @@
 @extends("layouts.layoutbase")
-
+@section('title', 'Home Page')
 @section('content')
 <div class="container mt-5">
     

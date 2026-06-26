@@ -12,7 +12,7 @@
         .hero-jumbotron {
             background-image: url('{{ asset("storage/img/workshop-bg.jpg") }}');
             background-size: cover;
-            background-position: center 60%;
+            background-position: center 41%;
             height: 300px;
             width: 100%;
 
@@ -26,7 +26,7 @@
         .hero-title {
 
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
-            font-size: 3.5rem;
+            font-size: 7rem;
             letter-spacing: 2px;
         }
     </style>
@@ -34,7 +34,7 @@
 </head>
 <body class="bg-light">
     
-    @include('partials.components.navbar')
+    @include('partials.navbar')
 
     <div class="hero-jumbotron">
         <h1 class="hero-title fw-bold text-white text-center text-uppercase m-0">
@@ -48,7 +48,7 @@
         </main>
     </div>
 
-    @include('partials.components.footer')
+    @include('partials.footer')
     
 </body>
 </html>
