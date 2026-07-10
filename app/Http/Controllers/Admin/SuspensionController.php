@@ -34,7 +34,20 @@ class SuspensionController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+
+        $data = $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'brand'       => 'required|string|max:255',
+            'name'        => 'required|string|max:255',
+            'price'       => 'required|numeric|min:0',
+            'size'        => 'nullable|string|max:255',
+            'wheel'       => 'nullable|string|max:255',
+            'material'    => 'nullable|string|max:255',
+            'color'       => 'nullable|string|max:255',
+            'brakes'      => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
 
         $newSuspension = new Suspension();
 
@@ -84,7 +97,20 @@ class SuspensionController extends Controller
     public function update(Request $request, Suspension $suspension)
     {
 
-        $data = $request->all();
+
+        $data = $request->validate([
+            'category_id' => 'required|exists:categories,id',
+            'brand'       => 'required|string|max:255',
+            'name'        => 'required|string|max:255',
+            'price'       => 'required|numeric|min:0',
+            'size'        => 'nullable|string|max:255',
+            'wheel'       => 'nullable|string|max:255',
+            'material'    => 'nullable|string|max:255',
+            'color'       => 'nullable|string|max:255',
+            'brakes'      => 'nullable|string|max:255',
+            'description' => 'nullable|string',
+            'image'       => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+        ]);
 
         $suspension->category_id = $data["category_id"];
         $suspension->brand = $data["brand"];
@@ -119,7 +145,7 @@ class SuspensionController extends Controller
     {
 
         if ($suspension->image) {
-            Storage::delete($suspension->image);
+            Storage::disk("public")->delete($suspension->image);
         }
         $suspension->delete();
 

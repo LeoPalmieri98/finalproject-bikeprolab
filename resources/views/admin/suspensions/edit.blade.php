@@ -13,17 +13,17 @@
             <div class="row">
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Brand</label>
-                    <input type="text" name="brand" class="form-control" value="{{ $suspension->brand}}">
+                    <input type="text" name="brand" class="form-control" value="{{ $suspension->brand}}" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Nome Modello</label>
-                    <input type="text" name="name" class="form-control" value="{{$suspension->name}}" >
+                    <input type="text" name="name" class="form-control" value="{{$suspension->name}}" required>
                 </div>
 
                 <div class="col-md-6 mb-3">
                     <label class="form-label fw-bold">Prezzo (€)</label>
-                    <input type="number" step="0.01" name="price" class="form-control" value="{{$suspension->price}}">
+                    <input type="number" step="0.01" name="price" class="form-control" value="{{$suspension->price}}" required>
                 </div>
 
                 <div class="col-md-6 mb-3">

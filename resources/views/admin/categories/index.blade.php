@@ -33,6 +33,11 @@
                             </td>
                             <td class="text-end">
                                 <div class="d-inline-flex gap-2">
+
+                                    <a href="{{ route('admin.categories.show', $category->id) }}" class="btn btn-sm btn-success  text-white">
+                                        Visualizza
+                                    </a>
+
                                     <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-sm btn-warning text-white">
                                         Modifica
                                     </a>

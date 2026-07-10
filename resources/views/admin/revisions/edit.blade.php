@@ -20,7 +20,7 @@
                         <li class="list-group-item"><strong>Email:</strong> {{ $revision->user_email }}</li>
                         <li class="list-group-item"><strong>Brand:</strong> {{ $revision->brand }}</li>
                         <li class="list-group-item"><strong>Modello:</strong> {{ $revision->model }}</li>
-                        <li class="list-group-item"><strong>Seriale:</strong> {{ $revision->serial_key }} - {{ $revision->serial_number }}</li>
+                        <li class="list-group-item"><strong>Seriale:</strong> {{ $revision->serial_key }}</li>
                         <li class="list-group-item"><strong>Intervallo richiesto:</strong> {{ $revision->service_interval }} ore</li>
                     </ul>
                 </div>
@@ -38,7 +38,7 @@
                         @csrf
                         @method('PUT')
 
-                        <div class="mb-4">
+                        <div class="mb-3">
                             <label for="status" class="form-label fw-bold">Stato Attuale</label>
                             <select name="status" id="status" class="form-select form-select-lg">
                                 <option value="Inviata" {{ $revision->status == 'Inviata' ? 'selected' : '' }}>Inviata</option>  
@@ -47,8 +47,6 @@
                                 <option value="Presa in carico" {{ $revision->status == 'Presa in carico' ? 'selected' : '' }}>Presa in carico</option>
                                 <option value="In Lavorazione" {{ $revision->status == 'In Lavorazione' ? 'selected' : '' }}>In Lavorazione</option>
                                 <option value="Completata" {{ $revision->status == 'Completata' ? 'selected' : '' }}>Completata</option>
-                            </select>
-                        </div>
                             </select>
                         </div>
 

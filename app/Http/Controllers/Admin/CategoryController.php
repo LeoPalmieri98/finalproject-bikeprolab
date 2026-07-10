@@ -30,7 +30,10 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'name'        => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000',
+        ]);
 
         $newCategory = new Category();
         $newCategory->name = $data["name"];
@@ -44,9 +47,9 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Category $category)
     {
-        //
+        return view('admin.categories.show', compact('category'));
     }
 
     /**
@@ -62,7 +65,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        $data = $request->all();
+        $data = $request->validate([
+            'name'        => 'required|string|max:255',
+            'description' => 'nullable|string|max:1000',
+        ]);
+
 
 
         $category->name = $data["name"];

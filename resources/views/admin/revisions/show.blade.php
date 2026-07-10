@@ -20,7 +20,7 @@
                         <li class="list-group-item"><strong>Email:</strong> {{ $revision->user_email }}</li>
                         <li class="list-group-item"><strong>Brand:</strong> {{ $revision->brand }}</li>
                         <li class="list-group-item"><strong>Modello:</strong> {{ $revision->model }}</li>
-                        <li class="list-group-item"><strong>Seriale:</strong> {{ $revision->serial_key }} - {{ $revision->serial_number }}</li>
+                        <li class="list-group-item"><strong>Seriale:</strong> {{ $revision->serial_key }}</li>
                         <li class="list-group-item"><strong>Intervallo richiesto:</strong> {{ $revision->service_interval }} ore</li>
                     </ul>
                 </div>
