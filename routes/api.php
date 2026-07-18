@@ -14,4 +14,4 @@ Route::get("suspensions", [SuspensionController::class, "index"]);
 
 Route::get("suspensions/{suspension}", [SuspensionController::class, "show"]);
 
-Route::apiResource('revisions', RevisionController::class);
+Route::post('revisions', [RevisionController::class, "store"]);

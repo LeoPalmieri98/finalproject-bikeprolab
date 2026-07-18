@@ -57,8 +57,8 @@
                                 </a>
 
                                 <form action="{{ route('admin.suspensions.destroy', $suspension) }}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare {{ $suspension->name }} in modo permanente?');">
-                                    @csrf
-                                    @method('DELETE')
+                                     @csrf
+                                     @method('DELETE')
                                     <button type="submit" class="btn btn-outline-danger btn-sm">
                                         <span class="fa-solid fa-trash"></span>
                                     </button>
