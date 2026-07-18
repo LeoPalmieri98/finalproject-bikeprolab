@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\RevisionController;
-use App\Http\Controllers\Admin\SuspensionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,7 +27,7 @@ Route::middleware(['auth'])
     ->name('admin.')
     ->group(function () {
         Route::resource('categories', CategoryController::class);
-        Route::resource('suspensions', SuspensionController::class);
+        Route::resource('products', ProductController::class);
         Route::resource('revisions', RevisionController::class);
     });
 

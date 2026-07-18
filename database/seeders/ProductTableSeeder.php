@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\Suspension;
+use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SuspensionTableSeeder extends Seeder
+class ProductTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        $suspensions = [
+        $products = [
             // 1. Forcella Fox 38
             [
                 'category_id' => 1, // Forcelle
@@ -100,21 +100,21 @@ class SuspensionTableSeeder extends Seeder
             ]
         ];
 
-        foreach ($suspensions as $item) {
+        foreach ($products as $item) {
 
-            $newSuspension = new Suspension();
-            $newSuspension->category_id = $item["category_id"];
-            $newSuspension->brand = $item["brand"];
-            $newSuspension->name = $item["name"];
-            $newSuspension->price = $item["price"];
-            $newSuspension->size = $item["size"];
-            $newSuspension->wheel = $item["wheel"];
-            $newSuspension->material = $item["material"];
-            $newSuspension->color = $item["color"];
-            $newSuspension->brakes = $item["brakes"];
-            $newSuspension->description = $item["description"];
-            $newSuspension->image = $item["image"];
-            $newSuspension->save();
+            $newProduct = new Product();
+            $newProduct->category_id = $item["category_id"];
+            $newProduct->brand = $item["brand"];
+            $newProduct->name = $item["name"];
+            $newProduct->price = $item["price"];
+            $newProduct->size = $item["size"];
+            $newProduct->wheel = $item["wheel"];
+            $newProduct->material = $item["material"];
+            $newProduct->color = $item["color"];
+            $newProduct->brakes = $item["brakes"];
+            $newProduct->description = $item["description"];
+            $newProduct->image = $item["image"];
+            $newProduct->save();
         }
     }
 }

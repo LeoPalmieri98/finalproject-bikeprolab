@@ -16,7 +16,7 @@
                     <a class="nav-link text-uppercase fw-bold" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-uppercase fw-bold" href="{{ route('admin.suspensions.index') }}">Shop</a>
+                    <a class="nav-link text-uppercase fw-bold" href="{{ route('admin.products.index') }}">Shop</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-uppercase fw-bold" href="{{ route('admin.revisions.index') }}">Revisione Sospensioni</a>

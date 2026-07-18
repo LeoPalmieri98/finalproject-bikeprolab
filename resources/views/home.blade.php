@@ -22,8 +22,8 @@
                 
                 <div class="card-body text-center bg-dark text-white rounded-bottom">
                     <h4 class="card-title text-uppercase mb-3">Gestione Shop</h4>
-                    <p class="card-text text-light">Aggiungi, modifica o elimina i prodotti dal catalogo sospensioni.</p>
-                    <a href="{{ route('admin.suspensions.index') }}" class="btn btn-outline-light mt-2 w-50">
+                    <p class="card-text text-light">Aggiungi, modifica o elimina i prodotti dal catalogo.</p>
+                    <a href="{{ route('admin.products.index') }}" class="btn btn-outline-light mt-2 w-50">
                         Vai allo Shop
                     </a>
                 </div>

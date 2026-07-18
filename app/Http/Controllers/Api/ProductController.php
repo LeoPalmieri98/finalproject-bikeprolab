@@ -3,29 +3,29 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Suspension;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class SuspensionController extends Controller
+class ProductController extends Controller
 {
 
     public function index()
     {
-        $suspensions = Suspension::with("category")->get();
+        $products = Product::with("category")->get();
 
         return response()->json([
             "success" => true,
-            "data" => $suspensions,
+            "data" => $products,
         ]);
     }
 
-    public function show(Suspension $suspension)
+    public function show(Product $product)
     {
-        $suspension->load("category");
+        $product->load("category");
 
         return response()->json([
             "success" => true,
-            "data" => $suspension
+            "data" => $product
         ]);
     }
 }

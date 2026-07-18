@@ -16,7 +16,7 @@
                 <strong>Descrizione:</strong> {{ $category->description }}
             </li>
             <li class="list-group-item bg-transparent px-0">
-                <strong>Sospensioni collegate:</strong> {{ $category->suspensions->count() }}
+                <strong>Prodotti collegati:</strong> {{ $category->products->count() }}
             </li>
         </ul>
 

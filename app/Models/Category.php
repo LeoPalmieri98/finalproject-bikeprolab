@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    public function suspensions()
+    public function products()
     {
-        return $this->hasMany(Suspension::class);
+        return $this->hasMany(Product::class);
     }
 }

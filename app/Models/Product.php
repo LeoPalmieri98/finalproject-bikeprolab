@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Suspension extends Model
+class Product extends Model
 {
 
 
